@@ -1,0 +1,778 @@
+//* Global Variables [Start]
+$xs: 375;
+$sm: 767;
+$md: 992;
+$lg: 1200;
+//* Global Variables [End]
+
+
+//! Colors Section [Start]
+$colors: (
+  "white": white,
+  "black": black,
+  "gray": #808080,
+  "blueGray": #607D8B,
+  "brown": #795548,
+  "red": #f7423f,
+  "cyan": #00bcd4,
+  "green": #4CAF50,
+  "yellow": #fbc02d,
+  "orange": #f57c00,
+  "pink": #ec407a,
+  "purple": #9c27b0,
+  "blue": #116fff,
+);
+
+@each $name,
+$color in $colors {
+  .#{"color-" + $name} {
+    color: $color  !important;
+  }
+}
+
+@each $name,
+$color in $colors {
+  .#{"bg-" + $name} {
+    background-color: $color  !important;
+  }
+}
+
+//! Colors Section [End]
+
+//? Padding Section [Start]
+
+@for $i from 0 through 10 {
+  .p-#{$i} {
+    $i: $i * 4;
+    padding: #{$i + px} !important;
+  }
+}
+
+@for $i from 0 through 10 {
+  .pt-#{$i} {
+    $i: $i * 4;
+    padding-top: #{$i + px} !important;
+  }
+}
+
+@for $i from 0 through 10 {
+  .pr-#{$i} {
+    $i: $i * 4;
+    padding-right: #{$i +px} !important;
+  }
+}
+
+@for $i from 0 through 10 {
+  .pb-#{$i} {
+    $i: $i * 4;
+    padding-bottom: #{$i + px} !important;
+  }
+}
+
+@for $i from 0 through 10 {
+  .pl-#{$i} {
+    $i: $i * 4;
+    padding-left: #{$i + px} !important;
+  }
+}
+
+//? Padding Section [End]
+
+//! Margin Section [Start]
+
+.m-auto {
+  margin: auto;
+}
+
+@for $i from 0 through 10 {
+  .m-#{$i} {
+    $i: $i * 4;
+    margin: #{$i + px} !important;
+  }
+}
+
+@for $i from 0 through 10 {
+  .mt-#{$i} {
+    $i: $i * 4;
+    margin-top: #{$i + px} !important;
+  }
+}
+
+@for $i from 0 through 10 {
+  .mr-#{$i} {
+    $i: $i * 4;
+    margin-right: #{$i + px} !important;
+  }
+}
+
+@for $i from 0 through 10 {
+  .mb-#{$i} {
+    $i: $i * 4;
+    margin-bottom: #{$i + px} !important;
+  }
+}
+
+@for $i from 0 through 10 {
+  .ml-#{$i} {
+    $i: $i * 4;
+    margin-left: #{$i + px} !important;
+  }
+}
+
+//! Margin Section [End]
+
+//? Circles Section [Start]
+
+.circle {
+  border-radius: 50% !important;
+  -webkit-border-radius: 50% !important;
+  -moz-border-radius: 50% !important;
+  -ms-border-radius: 50% !important;
+  -o-border-radius: 50% !important;
+}
+
+$circle-loop: 0;
+
+@for $i from 1 through 10 {
+  .circle-#{$i} {
+    border-radius: 50% !important;
+    -webkit-border-radius: 50% !important;
+    -moz-border-radius: 50% !important;
+    -ms-border-radius: 50% !important;
+    -o-border-radius: 50% !important;
+    width: 15px + $circle-loop  !important;
+    height: 15px + $circle-loop  !important;
+  }
+
+  $circle-loop: $circle-loop + 15px
+}
+
+//? Circles Section [End]
+
+//! Flex Section [Start]
+
+
+.justify-content-center {
+  display: flex !important;
+  justify-content: center !important;
+}
+
+.justify-content-start {
+  display: flex !important;
+  justify-content: flex-start !important;
+}
+
+.justify-content-end {
+  display: flex !important;
+  justify-content: flex-end !important;
+}
+
+.justify-content-space-around {
+  display: flex !important;
+  justify-content: space-around !important;
+}
+
+.justify-content-space-between {
+  display: flex !important;
+  justify-content: space-between !important;
+}
+
+.justify-content-space-evenly {
+  display: flex !important;
+  justify-content: space-evenly !important;
+}
+
+.justify-content-stretch {
+  display: flex !important;
+  justify-content: stretch !important;
+}
+
+.align-items-center {
+  display: flex !important;
+  align-items: center !important;
+}
+
+.align-items-start {
+  display: flex !important;
+  align-items: flex-start !important;
+}
+
+.align-items-end {
+  display: flex !important;
+  align-items: flex-end !important;
+}
+
+.align-items-stretch {
+  display: flex !important;
+  align-items: stretch !important;
+}
+
+.justify-items-center {
+  display: flex !important;
+  justify-items: center !important;
+}
+
+.justify-items-start {
+  display: flex !important;
+  justify-items: flex-start !important;
+}
+
+.justify-items-end {
+  display: flex !important;
+  justify-items: flex-end !important;
+}
+
+.justify-items-stretch {
+  display: flex !important;
+  justify-items: stretch !important;
+}
+
+.align-content-center {
+  display: flex !important;
+  align-content: center !important;
+}
+
+.align-content-start {
+  display: flex !important;
+  align-content: flex-start !important;
+}
+
+.align-content-end {
+  display: flex !important;
+  align-content: flex-end !important;
+}
+
+.align-content-space-around {
+  display: flex !important;
+  align-content: space-around !important;
+}
+
+.align-content-space-between {
+  display: flex !important;
+  align-content: space-between !important;
+}
+
+.align-content-stretch {
+  display: flex !important;
+  align-content: stretch !important;
+}
+
+.flex-dir-column {
+  flex-direction: column;
+}
+
+.flex-dir-row {
+  flex-direction: row;
+}
+
+$gap-loop: 0;
+
+@for $i from 1 through 30 {
+  .gap-#{$i} {
+    gap: 2px + $gap-loop  !important;
+  }
+
+  $gap-loop: $gap-loop + 2;
+}
+
+//! Flex Section [End]
+
+// ? Grid System [Start]
+
+$grid-columns: 12;
+
+@for $i from 1 through $grid-columns {
+  .col-#{$i} {
+    width: percentage($i / $grid-columns);
+    border: solid 1px;
+  }
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+// ? Grid System [End]
+
+//! Border Section [Start]
+
+@for $i from 1 through 20 {
+  .border-#{$i} {
+    border: solid 0px + $i black !important;
+  }
+
+}
+
+@for $i from 1 through 20 {
+  .border-top-#{$i} {
+    border-top: solid 0px + $i black !important;
+  }
+}
+
+@for $i from 1 through 20 {
+  .border-right-#{$i} {
+    border-right: solid 0px + $i black !important;
+  }
+}
+
+@for $i from 1 through 20 {
+  .border-bottom-#{$i} {
+    border-bottom: solid 0px + $i black !important;
+  }
+}
+
+@for $i from 1 through 20 {
+  .border-left-#{$i} {
+    border-left: solid 0px + $i black !important;
+  }
+}
+
+@for $i from 1 through 20 {
+  .border-radius-#{$i} {
+    border-radius: 0px + $i  !important;
+    -webkit-border-radius: 0px + $i  !important;
+    -moz-border-radius: 0px + $i  !important;
+    -ms-border-radius: 0px + $i  !important;
+    -o-border-radius: 0px + $i  !important;
+  }
+}
+
+.border-dashed {
+  border-style: dashed !important;
+}
+
+.border-solid {
+  border-style: solid !important;
+}
+
+.border-dotted {
+  border-style: dotted !important;
+}
+
+.border-double {
+  border-style: double !important;
+}
+
+.border-hidden {
+  border-style: hidden !important;
+}
+
+.border-none {
+  border-style: none !important;
+}
+
+//! Border Section [End]
+
+//? Outline Section [Start]
+
+@for $i from 1 through 20 {
+  .outline-#{$i} {
+    outline: 0px + $i black !important;
+  }
+}
+
+.outline-dashed {
+  outline-style: dashed !important;
+}
+
+.outline-solid {
+  outline-style: solid !important;
+}
+
+.outline-dotted {
+  outline-style: dotted !important;
+}
+
+.outline-double {
+  outline-style: double !important;
+}
+
+.outline-hidden {
+  outline-style: hidden !important;
+}
+
+.outline-none {
+  border-style: none !important;
+}
+
+//? Outline Section [End]
+
+//! Fonts Section [Start]
+
+$font-size-loop: 0;
+
+@for $i from 1 through 20 {
+  .fs-#{$i} {
+    font-size: 14px + $font-size-loop  !important;
+  }
+
+  $font-size-loop: $font-size-loop + 2;
+}
+
+.fw {
+  font-weight: bold !important;
+}
+
+.fn {
+  font-weight: normal !important;
+}
+
+.fi {
+  font-style: italic !important;
+}
+
+//! Fonts Section [End]
+
+//? Letter-Spacing [Start]
+
+$letter-spacing-loop: 0;
+
+@for $i from -20 through 20 {
+  .ls-#{$i} {
+    letter-spacing: -20px + $letter-spacing-loop  !important;
+  }
+
+  $letter-spacing-loop: $letter-spacing-loop + 1;
+}
+
+//? Letter-Spacing [End]
+
+//! Positions Section [Start]
+
+.position-relative {
+  position: relative !important;
+}
+
+.position-absolute {
+  position: absolute !important;
+}
+
+.position-fixed {
+  position: fixed !important;
+}
+
+.position-static {
+  position: static !important;
+}
+
+$position-loop: -100;
+
+@for $i from -4 through 4 {
+  .top-#{$position-loop} {
+    top: 0% + $position-loop  !important;
+  }
+
+  .right-#{$position-loop} {
+    right: 0% + $position-loop  !important;
+  }
+
+  .bottom-#{$position-loop} {
+    bottom: 0% + $position-loop  !important;
+  }
+
+  .left-#{$position-loop} {
+    left: 0% + $position-loop  !important;
+  }
+
+  $position-loop: $position-loop + 25;
+}
+
+//! Positions Section [End]
+
+//? Width & Height Section [Start]
+
+$size-loop: 0;
+
+@for $i from 0 through 4 {
+  .width-#{$size-loop} {
+    width: 0% + $size-loop  !important;
+  }
+
+  .height-#{$size-loop} {
+    height: 0% + $size-loop  !important;
+  }
+
+  $size-loop: $size-loop + 25;
+}
+
+//? Width & Height Section [End]
+
+//! Transition Section [Start]
+
+// TODO Need more of work such as delay transition
+
+$transition-loop: 0;
+
+@for $i from 1 through 60 {
+  .transition-#{$i} {
+    transition: all 0.1s + $transition-loop  !important;
+    -webkit-transition: all 0.1s + $transition-loop  !important;
+    -moz-transition: all 0.1s + $transition-loop  !important;
+    -ms-transition: all 0.1s + $transition-loop  !important;
+    -o-transition: all 0.1s + $transition-loop  !important;
+  }
+
+  $transition-loop: $transition-loop + 0.1;
+}
+
+//! Transition Section [End]
+
+//? Text-indent [Start]
+
+@for $i from -20 through 20 {
+  .text-indent-#{$i} {
+    text-indent: #{$i + px};
+  }
+}
+
+//? Text-indent [End]
+
+//! Container System [Start]
+
+@media (max-width: #{$xs}px) {
+  .container {
+    width: 335px;
+  }
+}
+
+@media (min-width: #{$sm}px) {
+  .container {
+    width: 700px;
+  }
+}
+
+@media (min-width: #{$md}px) {
+  .container {
+    width: 970px;
+  }
+}
+
+@media (min-width: #{$lg}px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+.container {
+  margin: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+//! Container System [End]
+
+//? Visible Section [Start]
+
+.visible-xs,
+.visible-sm,
+.visible-md,
+.visible-lg {
+  display: none;
+}
+
+@media (max-width: #{$xs + 1}px) {
+  .visible-xs {
+    display: block !important;
+  }
+}
+
+@media (min-width: #{$xs + 1}px) and (max-width: #{$sm - 1}px) {
+  .visible-sm {
+    display: block !important;
+  }
+}
+
+@media (min-width: #{$sm + 1}px) and (max-width: #{$md - 1}px) {
+  .visible-md {
+    display: block !important;
+  }
+}
+
+@media (min-width: #{$md + 1}px) {
+  .visible-lg {
+    display: block !important;
+  }
+}
+
+//? Visible Section [End]
+
+//! Hidden Section [Start]
+
+@media (max-width: #{$xs + 1}px) {
+  .hidden-xs {
+    display: none !important;
+  }
+}
+
+@media (min-width: #{$xs + 1}px) and (max-width: #{$sm - 1}px) {
+  .hidden-sm {
+    display: none !important;
+  }
+}
+
+@media (min-width: #{$sm + 1}px) and (max-width: #{$md - 1}px) {
+  .hidden-md {
+    display: none !important;
+  }
+}
+
+@media (min-width: #{$md + 1}px) {
+  .hidden-lg {
+    display: none !important;
+  }
+}
+
+//! Hidden Section [End]
+
+//? Paragraph Section [Start]
+@media (max-width: #{$xs + 1}px) {
+  .responsive-p {
+    line-height: 1.5 !important;
+    font-size: 16px !important;
+  }
+}
+
+@media (min-width: #{$xs + 1}px) and (max-width: #{$sm - 1}px) {
+  .responsive-p {
+    line-height: 1.6 !important;
+    font-size: 18px !important;
+  }
+}
+
+@media (min-width: #{$sm + 1}px) and (max-width: #{$md - 1}px) {
+  .responsive-p {
+    line-height: 1.7 !important;
+    font-size: 20px !important;
+  }
+}
+
+@media (min-width: #{$md + 1}px) {
+  .responsive-p {
+    line-height: 1.8 !important;
+    font-size: 20px !important;
+  }
+}
+
+//? Paragraph Section [End]
+
+//! Buttons Section [Start]
+
+.button-main {
+  background-color: #4186e1;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  transition: .3s;
+  -webkit-transition: .3s;
+  -moz-transition: .3s;
+  -ms-transition: .3s;
+  -o-transition: .3s;
+}
+
+.button-main:hover {
+  background-color: #2a77dc;
+}
+
+//! Buttons Section [End]
+
+
+//* Other Features [Start]
+
+.word-break {
+  word-break: break-all !important;
+}
+
+.word-keep {
+  word-break: keep-all !important;
+}
+
+.line-through {
+  text-decoration: line-through !important;
+}
+
+.overline {
+  text-decoration: overline !important;
+}
+
+.underline {
+  text-decoration: underline !important;
+}
+
+.text-decoration-none {
+  text-decoration: none !important;
+}
+
+.text-capitalize {
+  text-transform: capitalize;
+}
+
+.text-lowercase {
+  text-transform: lowercase;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.h1 {
+  font-size: 2em !important;
+}
+
+.h2 {
+  font-size: 1.5em !important;
+}
+
+.list-unstyled {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.reverse-x {
+  transform: rotateX(0.5turn);
+  -webkit-transform: rotateX(0.5turn);
+  -moz-transform: rotateX(0.5turn);
+  -ms-transform: rotateX(0.5turn);
+  -o-transform: rotateX(0.5turn);
+}
+
+.reverse-y {
+  transform: rotateY(0.5turn);
+  -webkit-transform: rotateY(0.5turn);
+  -moz-transform: rotateY(0.5turn);
+  -ms-transform: rotateY(0.5turn);
+  -o-transform: rotateY(0.5turn);
+}
+
+.d-block {
+  display: block;
+}
+
+.d-inline {
+  display: inline;
+}
+
+.d-inline-block {
+  display: inline-block;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.d-inline-flex {
+  display: inline-flex;
+}
+
+//* Other Features [End]
