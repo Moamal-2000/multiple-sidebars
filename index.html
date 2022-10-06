@@ -244,13 +244,51 @@
 
     <div class="middle-side">
       <section class="slider-imgs">
-        <span class="slider-imgs__title">Welcome to the community!</span>
-        <img loading="lazy" src="images/Holiday-Season.webp">
-        <div class="slider-imgs__switcher">
-          <span class="slider-imgs__item"></span>
-          <span class="slider-imgs__item"></span>
-          <span class="slider-imgs__item"></span>
+        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
+          <div class="slider-imgs__switcher">
+            <button class="slider-imgs__switcher--button active" type="button" data-bs-target="#carouselExampleCaptions"
+              data-bs-slide-to="0" aria-current="true" aria-label="Slide 1"></button>
+            <button class="slider-imgs__switcher--button" type="button" data-bs-target="#carouselExampleCaptions"
+              data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button class="slider-imgs__switcher--button" type="button" data-bs-target="#carouselExampleCaptions"
+              data-bs-slide-to="2" aria-label="Slide 3"></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img loading="lazy"
+                src="images/nina-uhlikova.jpg">
+              <div class="carousel-caption d-none d-md-block">
+                <h5 class="title">Welcome to the community!</h5>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img loading="lazy"
+                src="https://external-preview.redd.it/kjvh9eG0rRyONxaaax1UF_vcPIup984kln_qG_wJDbs.jpg?auto=webp&s=7e379698ed9f6b41e3bff4623753dcbeca0ac3e5">
+              <div class="carousel-caption d-none d-md-block">
+                <h5 class="title">Welcome to the community!</h5>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img loading="lazy"
+                src="images/joabson-rocha.jpg">
+              <div class="carousel-caption d-none d-md-block">
+                <h5 class="title">Welcome to the community!</h5>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
         </div>
+
+
       </section>
 
       <section class="latest-activity">
@@ -603,12 +641,13 @@
 
   </div>
 
-  <sect class="vh-100 sign-up">
-    <div class="container h-100 user-select-none">
-      <div class="row d-flex justify-content-center align-items-center h-100">
-        <div class="col-lg-12 col-xl-11">
-          <div class="card text-black" style="border-radius: 25px;">
+  <section class="w-100 sign-up">
+    <div class="container h-100 user-select-none layer2">
+      <div class="row d-flex justify-content-center align-items-center h-100 layer3">
+        <div class="col-lg-12 col-md-12 col-sm-12 layer4">
+          <div class="card text-black" style="border-radius: 10px;">
             <div class="card-body p-md-5">
+              <!-- <img src="images/pngwing.com.png"> -->
               <div class="row justify-content-center">
                 <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
 
@@ -619,7 +658,7 @@
                     <div class="d-flex flex-row align-items-center mb-4">
                       <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                       <div class="form-outline flex-fill mb-0">
-                        <input type="text" id="form3Example1c" class="form-control" required/>
+                        <input type="text" id="form3Example1c" class="form-control" required />
                         <label class="form-label" for="form3Example1c">Your Name</label>
                       </div>
                     </div>
@@ -627,7 +666,7 @@
                     <div class="d-flex flex-row align-items-center mb-4">
                       <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
                       <div class="form-outline flex-fill mb-0">
-                        <input type="email" id="form3Example3c" class="form-control" required/>
+                        <input type="email" id="form3Example3c" class="form-control" required />
                         <label class="form-label" for="form3Example3c">Your Email</label>
                       </div>
                     </div>
@@ -635,7 +674,7 @@
                     <div class="d-flex flex-row align-items-center mb-4">
                       <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
                       <div class="form-outline flex-fill mb-0">
-                        <input type="password" id="form3Example4c" class="form-control" required/>
+                        <input type="password" id="form3Example4c" class="form-control" required />
                         <label class="form-label" for="form3Example4c">Password</label>
                       </div>
                     </div>
@@ -643,13 +682,13 @@
                     <div class="d-flex flex-row align-items-center mb-4">
                       <i class="fas fa-key fa-lg me-3 fa-fw"></i>
                       <div class="form-outline flex-fill mb-0">
-                        <input type="password" id="form3Example4cd" class="form-control" required/>
+                        <input type="password" id="form3Example4cd" class="form-control" required />
                         <label class="form-label" for="form3Example4cd">Repeat your password</label>
                       </div>
                     </div>
 
                     <div class="form-check d-flex justify-content-center mb-5">
-                      <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3" required/>
+                      <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3" required />
                       <label class="form-check-label" for="form2Example3">
                         I agree all statements in <a href="#!">Terms of service</a>
                       </label>
@@ -665,7 +704,7 @@
                 <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
 
                   <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp"
-                    class="img-fluid" alt="Sample image">
+                    class="img-fluid hidden-md hidden-sm hidden-xs" alt="Sample image">
 
                 </div>
               </div>
@@ -674,7 +713,8 @@
         </div>
       </div>
     </div>
-  </sect>
+  </section>
+
   <script src="js/script.js"></script>
 </body>
 
