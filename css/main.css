@@ -3102,6 +3102,12 @@ html {
     bottom: -407px;
   }
 }
+@media (max-width: 376px) {
+  .layout .left-side .search-bar .search-menu {
+    width: 51%;
+    bottom: -408px;
+  }
+}
 .layout .left-side .members,
 .layout .left-side .groups {
   margin-top: 20px;
@@ -3941,6 +3947,15 @@ html {
     -moz-transform: translate(-50%, -52%);
     -ms-transform: translate(-50%, -52%);
     -o-transform: translate(-50%, -52%);
+  }
+  .recent-active-members .content {
+    justify-content: center;
+  }
+  .recent-active-members .content .image {
+    margin: 4px;
+  }
+  .filter span {
+    margin: 4px 4px;
   }
 }
 .overlay {

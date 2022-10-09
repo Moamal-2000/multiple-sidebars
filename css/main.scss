@@ -141,6 +141,13 @@
           bottom: -407px;
         }
       }
+
+      @media (max-width: 376px) {
+        .search-menu {
+          width: 51%;
+          bottom: -408px;
+        }
+      }
     }
 
     .members,
@@ -1042,6 +1049,22 @@
     -moz-transform: translate(-50%, -52%);
     -ms-transform: translate(-50%, -52%);
     -o-transform: translate(-50%, -52%);
+  }
+
+  .recent-active-members {
+    .content {
+      justify-content: center;
+
+      .image {
+        margin: 4px;
+      }
+    }
+  }
+
+  .filter {
+    span {
+      margin: 4px 4px;
+    }
   }
 }
 
