@@ -20,6 +20,11 @@
     -o-border-radius: 10px;
     padding: 20px;
     position: relative;
+    transition: $main-transition;
+    -webkit-transition: $main-transition;
+    -moz-transition: $main-transition;
+    -ms-transition: $main-transition;
+    -o-transition: $main-transition;
   }
 
   .left-side {

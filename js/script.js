@@ -27,6 +27,20 @@ function error(ele, color, timer = 400, originColor = "black") {
     ele.style.color = originColor;
   }, timer);
 }
+
+function sectionEffect(section) {
+  searchMenu.style.display = "none";
+  section.style.backgroundColor = "black";
+  setTimeout(() => {
+    section.style.backgroundColor = "white";
+    setTimeout(() => {
+      section.style.backgroundColor = "black";
+      setTimeout(() => {
+        section.style.backgroundColor = "white";
+      }, 400);
+    }, 400);
+  }, 400);
+}
 //* Functions [End]
 
 //! Friends Buttons [Start]
@@ -75,6 +89,7 @@ buttonSearch.addEventListener("click", () => {
           membersSection.offsetTop -
           innerHeight
       );
+      sectionEffect(membersSection);
       searchInp.value = "";
       break;
     }
@@ -87,6 +102,7 @@ buttonSearch.addEventListener("click", () => {
           groupsSection.offsetTop -
           innerHeight
       );
+      sectionEffect(groupsSection);
       searchInp.value = "";
       break;
     }
@@ -99,6 +115,7 @@ buttonSearch.addEventListener("click", () => {
           activeMembersSection.offsetTop -
           innerHeight
       );
+      sectionEffect(activeMembersSection);
       searchInp.value = "";
       break;
     }
@@ -111,6 +128,7 @@ buttonSearch.addEventListener("click", () => {
           scheduleSection.offsetTop -
           innerHeight
       );
+      sectionEffect(scheduleSection);
       searchInp.value = "";
       break;
     }
@@ -123,6 +141,7 @@ buttonSearch.addEventListener("click", () => {
           latestActivitySection.offsetTop -
           innerHeight
       );
+      sectionEffect(latestActivitySection);
       searchInp.value = "";
       break;
     }
@@ -135,6 +154,7 @@ buttonSearch.addEventListener("click", () => {
           postsSection.offsetTop -
           innerHeight
       );
+      sectionEffect(postsSection);
       searchInp.value = "";
       break;
     }
@@ -147,6 +167,7 @@ buttonSearch.addEventListener("click", () => {
           featuresSection.offsetTop -
           innerHeight
       );
+      sectionEffect(featuresSection);
       searchInp.value = "";
       break;
     }
@@ -159,6 +180,7 @@ buttonSearch.addEventListener("click", () => {
           signInSection.offsetTop -
           innerHeight
       );
+      sectionEffect(signInSection);
       searchInp.value = "";
       break;
     }
@@ -171,6 +193,7 @@ buttonSearch.addEventListener("click", () => {
           statisticsSection.offsetTop -
           innerHeight
       );
+      sectionEffect(statisticsSection);
       searchInp.value = "";
       break;
     }
@@ -183,6 +206,7 @@ buttonSearch.addEventListener("click", () => {
           whoIsOnlineSection.offsetTop -
           innerHeight
       );
+      sectionEffect(whoIsOnlineSection);
       searchInp.value = "";
       break;
     }
@@ -195,6 +219,7 @@ buttonSearch.addEventListener("click", () => {
           repliesSection.offsetTop -
           innerHeight
       );
+      sectionEffect(repliesSection);
       searchInp.value = "";
       break;
     }
@@ -207,6 +232,7 @@ buttonSearch.addEventListener("click", () => {
           topicsSection.offsetTop -
           innerHeight
       );
+      sectionEffect(topicsSection);
       searchInp.value = "";
       break;
     }
@@ -303,4 +329,5 @@ year.textContent = `${
   monthsOfTheYear[new Date().getMonth()]
 } ${new Date().getFullYear()}`;
 prevMonth.textContent = monthsOfTheYear[new Date().getMonth() - 1];
+days[new Date().getDate() - 1].classList.add("active");
 //! schedule Date [End]

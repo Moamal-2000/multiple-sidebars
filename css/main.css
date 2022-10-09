@@ -2982,6 +2982,11 @@ html {
   -o-border-radius: 10px;
   padding: 20px;
   position: relative;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
 }
 .layout .left-side {
   width: 22%;
