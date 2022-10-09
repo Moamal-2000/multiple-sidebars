@@ -1,7 +1,5 @@
 "use strict";
-
 //* Variables [Start]
-
 let membersSection = document.querySelector(".layout .members");
 let groupsSection = document.querySelector(".layout .groups");
 let activeMembersSection = document.querySelector(
@@ -17,10 +15,19 @@ let statisticsSection = document.querySelector(".layout .statistics");
 let whoIsOnlineSection = document.querySelector(".layout .who-is-online");
 let repliesSection = document.querySelector(".layout .replies");
 let topicsSection = document.querySelector(".layout .topics");
-
 let overlay = document.querySelector(".overlay");
-
 //* Variables [End]
+
+//* Functions [Start]
+function error(ele, color, timer = 400, originColor = "black") {
+  ele.style.transition = "0.3s";
+  ele.style.color = color;
+  setTimeout(() => {
+    ele.style.color = originColor;
+    ele.style.color = originColor;
+  }, timer);
+}
+//* Functions [End]
 
 //! Friends Buttons [Start]
 let friendsButton = document.querySelectorAll(
@@ -38,28 +45,10 @@ friendsButton.forEach((btn) => {
 });
 //! Friends Buttons [End]
 
-//? Fix remember me checkbox [Start]
-
-let checkboxContainer = document.querySelector(".sign-in__checkbox");
-let checkbox = document.querySelector(
-  '.sign-in__checkbox input[type="checkbox"]'
-);
-
-checkboxContainer.addEventListener("click", () => {
-  if (checkbox.checked === true) checkbox.checked = false;
-  else checkbox.checked = true;
-});
-
-//? Fix remember me checkbox [End]
-
-//! Popup sign up form [Start]
+//? Popup sign up form [Start]
 
 let signUpButton = document.querySelector(".sign-in .create-account");
 let signUpForm = document.querySelector(".sign-up");
-let layer2 = document.querySelector(".layer2");
-let layer3 = document.querySelector(".layer3");
-let layer4 = document.querySelector(".layer4");
-
 signUpButton.addEventListener("click", () => {
   overlay.style.display = "block";
   signUpForm.style.display = "block";
@@ -70,34 +59,14 @@ overlay.addEventListener("click", () => {
   signUpForm.style.display = "none";
 });
 
-signUpForm.addEventListener("click", () => {
-  overlay.style.display = "none";
-  signUpForm.style.display = "none";
-});
+//? Popup sign up form [End]
 
-layer2.addEventListener("click", () => {
-  overlay.style.display = "none";
-  signUpForm.style.display = "none";
-});
-
-layer3.addEventListener("click", () => {
-  overlay.style.display = "none";
-  signUpForm.style.display = "none";
-});
-
-layer4.addEventListener("click", () => {
-  overlay.style.display = "none";
-  signUpForm.style.display = "none";
-});
-
-//! Popup sign up form [End]
-
-//? Search Bar [Start]
+//! Search Bar [Start]
 let searchInp = document.querySelector(".search-bar input");
 let buttonSearch = document.querySelector(".search-bar button");
 
 buttonSearch.addEventListener("click", () => {
-  switch (searchInp.value) {
+  switch (searchInp.value.toLowerCase()) {
     case "members": {
       window.scrollTo(
         0,
@@ -122,7 +91,7 @@ buttonSearch.addEventListener("click", () => {
       break;
     }
 
-    case "recent active members": {
+    case "recently active members": {
       window.scrollTo(
         0,
         scrollY +
@@ -134,7 +103,7 @@ buttonSearch.addEventListener("click", () => {
       break;
     }
 
-    case "schedule": {
+    case "the schedule": {
       window.scrollTo(
         0,
         scrollY +
@@ -158,7 +127,7 @@ buttonSearch.addEventListener("click", () => {
       break;
     }
 
-    case "posts": {
+    case "latest posts": {
       window.scrollTo(
         0,
         scrollY +
@@ -170,7 +139,7 @@ buttonSearch.addEventListener("click", () => {
       break;
     }
 
-    case "features": {
+    case "the features": {
       window.scrollTo(
         0,
         scrollY +
@@ -206,7 +175,7 @@ buttonSearch.addEventListener("click", () => {
       break;
     }
 
-    case "who is online": {
+    case "who's online": {
       window.scrollTo(
         0,
         scrollY +
@@ -218,7 +187,7 @@ buttonSearch.addEventListener("click", () => {
       break;
     }
 
-    case "replies": {
+    case "recent replies": {
       window.scrollTo(
         0,
         scrollY +
@@ -230,7 +199,7 @@ buttonSearch.addEventListener("click", () => {
       break;
     }
 
-    case "topics": {
+    case "recent topics": {
       window.scrollTo(
         0,
         scrollY +
@@ -243,12 +212,95 @@ buttonSearch.addEventListener("click", () => {
     }
 
     default: {
-      searchInp.style.transition = "0.3s";
-      searchInp.style.color = "red";
-      setTimeout(() => {
-        searchInp.style.color = "black";
-      }, 500);
+      error(searchInp, "red", 500);
     }
   }
 });
-//? Search Bar [End]
+
+//* Search Menu [Start]
+let sections = document.querySelectorAll(".layout div section h2");
+let searchMenu = document.querySelector(
+  ".layout .left-side .search-bar .search-menu"
+);
+
+sections.forEach((section) => {
+  let div = document.createElement("div");
+  div.classList.add("search-menu__item");
+  let text = document.createTextNode(section.textContent);
+  div.append(text);
+  searchMenu.append(div);
+});
+
+searchInp.addEventListener("input", () => {
+  searchMenu.style.display = "flex";
+  if (searchInp.value === "") {
+    searchMenu.style.display = "none";
+  }
+});
+
+searchInp.addEventListener("focus", () => {
+  searchMenu.style.display = "flex";
+});
+
+for (let i = 0; i < searchMenu.children.length; i++) {
+  searchMenu.children[i].addEventListener("click", () => {
+    searchInp.value = searchMenu.children[i].textContent;
+  });
+}
+//* Search Menu [End]
+//! Search Bar [End]
+
+//? Validate Password [Start]
+let signUpContainer = document.querySelector(".sign-up");
+let lockIcon = document.querySelector(".sign-up form div .lock");
+let unlockIcon = document.querySelector(".sign-up form div .unlock");
+let passInp = document.querySelector(".sign-up form div .password");
+let confirmPassInp = document.querySelector(".sign-up form div .confirm-pass");
+let signUpBtn = document.querySelector(".sign-up form div .submit");
+
+lockIcon.addEventListener("click", () => {
+  lockIcon.style.display = "none";
+  unlockIcon.style.display = "block";
+  passInp.type = "text";
+  confirmPassInp.type = "text";
+});
+
+unlockIcon.addEventListener("click", () => {
+  unlockIcon.style.display = "none";
+  lockIcon.style.display = "block";
+  passInp.type = "password";
+  confirmPassInp.type = "password";
+});
+
+signUpBtn.addEventListener("click", (e) => {
+  if (passInp.value !== confirmPassInp.value) {
+    error(passInp, "red");
+    error(confirmPassInp, "red");
+    e.preventDefault();
+  }
+});
+//? Validate Password [End]
+
+//! schedule Date [Start]
+let year = document.querySelector(".schedule .year");
+let days = document.querySelectorAll(".schedule .calender .numbers-days span");
+let prevMonth = document.querySelector(".schedule .month");
+let monthsOfTheYear = [
+  "Jan",
+  "Feb",
+  "Mar",
+  "Apr",
+  "May",
+  "Jun",
+  "Jul",
+  "Aug",
+  "Sep",
+  "Oct",
+  "Nov",
+  "Dec",
+];
+year.textContent = `${
+  monthsOfTheYear[new Date().getMonth()]
+} ${new Date().getFullYear()}`;
+prevMonth.textContent = monthsOfTheYear[new Date().getMonth() - 1];
+//! schedule Date [End]
